@@ -11,8 +11,8 @@ struct ContentView: View {
   
   @State private var capturedImage: UIImage? = nil
   @State private var isCustomCameraViewPresented = false
-@State var isAlert = false
-@State var text = "Press the button to log it"
+  @State var isAlert = false
+  @State var text = "Press the button to log it"
 
     var body: some View {
       ZStack {
@@ -40,6 +40,8 @@ struct ContentView: View {
             .sheet(isPresented: $isCustomCameraViewPresented, content: {
               CustomCameraView(capturedImage: $capturedImage)
             })
+          showAlert()
+
           }
         }
       }
